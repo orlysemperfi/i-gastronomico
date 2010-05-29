@@ -36,11 +36,6 @@ public class Tour {
     private String cod_tour;
 
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.09611150-3EE9-3DCB-2D1B-3E36CD49A74F]
-    // </editor-fold> 
-    private int cod_tour;
-
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.CA1030E3-9AC2-8456-ED23-1CD8D791416F]
     // </editor-fold> 
     private ArrayList<Local> mLocal;

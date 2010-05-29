@@ -21,11 +21,6 @@ public class Usuario {
     private int tipo_usuario;
 
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.36CDD8B4-4847-EE50-D15D-BB9D561248B0]
-    // </editor-fold> 
-    private date fecha_registro;
-
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.355DE8C0-DBB6-8229-ABA6-2C4132548333]
     // </editor-fold> 
     private ArrayList<Local> mLocal;
