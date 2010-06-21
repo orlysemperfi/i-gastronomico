@@ -34,8 +34,8 @@ public class LoginAction extends DispatchAction {
 		UsuarioBean bean=servicio.login((LoginForm)form);
 
 		if(bean !=null){
-			ArrayList listado=servicio.listadoUsuarios();
-			request.setAttribute("listadoUsuarios",listado);
+			//ArrayList listado=servicio.listadoUsuarios();
+			//request.setAttribute("listadoUsuarios",listado);
 			return mapping.findForward("exito");
 		}else{
 			request.setAttribute("mensajeerror","el usuario no es valido");
@@ -43,38 +43,9 @@ public class LoginAction extends DispatchAction {
 		}
 	}
 
-	public ActionForward listar(ActionMapping mapping,	ActionForm form,HttpServletRequest request,	HttpServletResponse response)throws Exception{
-	//	EmpleadoService servicio=new EmpleadoService();
-	//	EmpleadoBean bean=servicio.login((LoginForm)form);
-	//	ArrayList listado=servicio.listadoEmpleados();
-	//	request.setAttribute("listadoEmpleados",listado);
-		return mapping.findForward("exito");
-	}
+	
 
-         public String listarUsuario(){
-        log.debug("UsuarioAction :: listarUsuario()");
-
-        try{
-            //Establecemos el menu en el que nos encontramos
-     
-
-            Usuario usu1 = new Usuario("U0001","Junior Rufasto","123",1,"20/06/2010","jrufasto5@gmail.com");
-            Usuario usu2 = new Usuario("U0002","Jose Huaman","123",2,"20/06/2010","jhuaman@gmail.com");
-            Usuario usu3 = new Usuario("U0003","Carlos Martinez","123",1,"20/06/2010","cmartinez@gmail.com");
-           
-
-            List<Usuario> listUsuarios = new ArrayList<Usuario>();
-            listUsuarios.add(usu1);
-            listUsuarios.add(usu2);
-            listUsuarios.add(usu3);
-           
-
-            return null;
-        }catch (Exception e) {
-            log.error("Error: UsuarioAction :: listarUsuario => " + e);
-            return "error";
-        }
-    }
+       
 
 }
 
