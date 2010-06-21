@@ -15,6 +15,6 @@ import pe.edu.upc.dew.igastronomico.bean.UsuarioBean;
 public interface UsuarioDAO {
 
     public abstract UsuarioBean login(LoginForm form) throws Exception;
-    public abstract ArrayList listadoEmpleados() throws Exception;
+    public abstract ArrayList listadoUsuarios() throws Exception;
 
 }
