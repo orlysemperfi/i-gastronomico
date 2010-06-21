@@ -53,5 +53,9 @@ public class UsuarioService {
 		return objUsuarioDAO.login(form);
 	}
 
+        public ArrayList listadoUsuarios() throws Exception{
+		return objUsuarioDAO.listadoUsuarios();
+	}
+
 }
 
