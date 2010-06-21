@@ -31,16 +31,16 @@ public class LoginAction extends DispatchAction {
 	public ActionForward login(ActionMapping mapping,	ActionForm form,HttpServletRequest request,	HttpServletResponse response)throws Exception{
 
 		UsuarioService servicio=new UsuarioService();
-		//UsuarioBean bean=servicio.login((LoginForm)form);
+		UsuarioBean bean=servicio.login((LoginForm)form);
 
-		//if(bean !=null){
-			//noooooArrayList listado=servicio.listadoEmpleados();
-			//nooooorequest.setAttribute("listadoEmpleados",listado);
+		if(bean !=null){
+			ArrayList listado=servicio.listadoUsuarios();
+			request.setAttribute("listadoUsuarios",listado);
 			return mapping.findForward("exito");
-	//	}else{
-		//	request.setAttribute("mensajeerror","el usuario no es valido");
-		//	return mapping.findForward("falla");
-	//	}
+		}else{
+			request.setAttribute("mensajeerror","el usuario no es valido");
+			return mapping.findForward("falla");
+		}
 	}
 
 	public ActionForward listar(ActionMapping mapping,	ActionForm form,HttpServletRequest request,	HttpServletResponse response)throws Exception{
