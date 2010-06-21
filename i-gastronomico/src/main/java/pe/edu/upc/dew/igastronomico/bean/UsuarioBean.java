@@ -7,6 +7,7 @@ package pe.edu.upc.dew.igastronomico.bean;
 import org.apache.commons.beanutils.BeanAccessLanguageException;
 
 
+
 /**
  *
  * @author Junior
