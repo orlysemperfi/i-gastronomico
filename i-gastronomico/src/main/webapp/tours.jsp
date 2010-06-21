@@ -51,7 +51,7 @@
 
 <div id="header">
 <h1><a href="#">i-Gastronómico</a></h1>
-<h2>aventura culinaria virtual</h2>
+<h2>Aventura Culinaria Virtual</h2>
 </div>
 
 <div id="menu">
