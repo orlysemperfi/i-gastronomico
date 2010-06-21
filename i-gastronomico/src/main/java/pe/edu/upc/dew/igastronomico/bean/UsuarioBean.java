@@ -20,6 +20,16 @@ public class UsuarioBean extends BeanAccessLanguageException {
     private String email;
     private String contrasena;
 
+     public UsuarioBean(String cod_usuario, String nombre_usuario, String contrasena, int tipo_usuario, String fecha_registro, String email) {
+        this.cod_usuario = cod_usuario;
+        this.nombre_usuario = nombre_usuario;
+        this.contrasena = contrasena;
+        this.tipo_usuario = tipo_usuario;
+        this.fecha_registro = fecha_registro;
+        this.email = email;
+
+    }
+
     public String getCod_usuario() {
         return cod_usuario;
     }
