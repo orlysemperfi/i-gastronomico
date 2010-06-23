@@ -45,12 +45,14 @@ public class UsuarioService {
 
 	 /*Metodo que valida el login*/
 	 public UsuarioBean login(LoginForm form) {
+              System.out.println(form.getUsuario());
+                 System.out.println(form.getPassword());
 		UsuarioBean u = null;
 		for(UsuarioBean us : listUsuarios ){
 
 
 //if (us.getCod_usuario().equals(form.toString("username"))) {
-      if(us.getCod_usuario().equals(((LoginForm)form).getUsuario())){
+      if((us.getCod_usuario().equals(((LoginForm)form).getUsuario())) && (us.getContrasena().equals(((LoginForm)form).getPassword())) ){
             //  .equals((LoginForm)form).getUsuario()){
 				u = us;
 			}
