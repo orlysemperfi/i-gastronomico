@@ -33,9 +33,11 @@ public class LoginAction extends DispatchAction {
 		UsuarioService servicio=new UsuarioService();
 		UsuarioBean bean=servicio.login((LoginForm)form);
 
+
 		if(bean !=null){
 			//ArrayList listado=servicio.listadoUsuarios();
 			//request.setAttribute("listadoUsuarios",listado);
+                    request.getSession().setAttribute("usrLogin", bean);
 			return mapping.findForward("exito");
 		}else{
 			request.setAttribute("mensajeerror","el usuario no es valido");
