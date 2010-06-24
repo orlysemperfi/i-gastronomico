@@ -30,7 +30,8 @@ public class TourBean extends BeanAccessLanguageException{
         this.flag_comparte_tour = flag_comparte_tour;
     }
 
-
+    public TourBean(){
+    }
 
     public String getCod_local() {
         return cod_local;
