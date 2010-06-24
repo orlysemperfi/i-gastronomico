@@ -27,8 +27,8 @@ public class UsuarioService {
 	este metodo	*/
 	public UsuarioService(){
 	UsuarioBean usu1 = new UsuarioBean("U0001","Junior Rufasto","123",1,"20/06/2010","jrufasto5@gmail.com");
-        UsuarioBean usu2 = new UsuarioBean("U0002","Jose Huaman","123",2,"20/06/2010","jhuaman@gmail.com");
-        UsuarioBean usu3 = new UsuarioBean("U0003","Carlos Martinez","123",1,"20/06/2010","cmartinez@gmail.com");
+        UsuarioBean usu2 = new UsuarioBean("U0002","Jose Huaman","123",0,"20/06/2010","jhuaman@gmail.com");
+        UsuarioBean usu3 = new UsuarioBean("U0003","Carlos Martinez","123",0,"20/06/2010","cmartinez@gmail.com");
 
 		//ya no declaras nuevamente xq ya lo has declarado como global, solo la inicializas
         //List<UsuarioBean> listUsuarios = new ArrayList<UsuarioBean>();
