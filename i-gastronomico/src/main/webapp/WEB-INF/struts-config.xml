@@ -47,7 +47,7 @@
         <action path="/TourAction"
 			type="pe.edu.upc.dew.igastronomico.action.TourAction"
 			name="TourForm"
-			scope="session"
+			scope="request"
 			parameter="method"
 			validate="false"
 			input="/errorR.jsp">
