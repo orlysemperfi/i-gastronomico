@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="windows-1252"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
-
+<jsp:include page="cabecera.jsp" flush="true|false"/>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
@@ -20,22 +20,7 @@
     <body>
         <div id="wrap">
 
-<div id="header">
-<h1><a href="#">i-Gastronómico</a></h1>
-<h2>aventura culinaria virtual</h2>
-</div>
 
-<div id="menu">
-<ul>
-<li><a href="index.html">Inicio</a></li>
-<li><a href="comentarios.html">Comentarios</a></li>
-<li><a href="registro.html">Registro</a></li>
-<li><a href="consultas.html">Consultas</a></li>
-<li><a href="LocalAction.do?method=listarLocal">Tours</a></li>
-<li><a href="contactenos.html">Contáctenos</a></li>
-<li><a href="login.jsp">login</a></li>
-</ul>
-</div>
 
 <div id="content">
 
