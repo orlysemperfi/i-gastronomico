@@ -7,7 +7,9 @@
 <%@page contentType="text/html" pageEncoding="windows-1252"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
-
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
+<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
@@ -60,8 +62,9 @@
 <li><a href="comentarios.html">Comentarios</a></li>
 <li><a href="registro.html">Registro</a></li>
 <li><a href="consultas.html">Consultas</a></li>
-<li><a href="tours.html">Tours</a></li>
+<li><a href="tours.jsp">Tours</a></li>
 <li><a href="contactenos.html">Contáctenos</a></li>
+<li><a href="login.jsp">login</a></li>
 </ul>
 </div>
 
@@ -73,24 +76,26 @@
 </p>
 </div>
 <div style="clear:both;">
-	<form action="" name="formulario" id="formulario" method="post">
+	<form name="form1" method="post" action="tourRegistra.do">
+            <input type="hidden" name="method" value="registraTour"/>
   <table width="300" border="1">
     <tr>
       <td>Codigo tour</td>
       <td>
         <p>
           <label>
-            <input type="text" name="textfield" id="textfield" />
+            <input type="text" name="cod_tour" id="cod_tour" />
           </label>
         </p>
       </td>
     </tr>
     <tr>
       <td>Nombre tour</td>
+     
       <td>
         <p>
           <label>
-            <input type="text" name="textfield2" id="textfield2" />
+            <input type="text" name="nombre_tour" id="nombre_tour" />
           </label>
         </p>
       </td>
@@ -100,7 +105,7 @@
       <td>
         <p>
           <label>
-            <input type="text" value="00001" name="textfield3" id="textfield3" disabled="disabled" />
+            <input type="text" value="${usrLogin.cod_usuario}" name="cod_usuario" id="cod_usuario" disabled="disabled" />
           </label>
         </p>
       </td>
@@ -109,17 +114,14 @@
       <td> Local</td>
       <td>
 
-          <p>
+          
+           <p>
             <label>
-              <select name="select1" id="select1" class="combo">
-                <option>--Seleccione una opción--</option>
-                <option value="00001">Acurio Restaurant</option>
-                <option value="00002">Rustica</option>
-                <option value="00003">El escondite del gordo</option>
-              </select>
-            </label>
+                <html:select property="cod_local" name="blocal" styleClass="combo">
+                                       <html:options collection="lstaCmbo" labelProperty="razon_social" property="cod_local"/>
+                               </html:select>
+                               </label>
           </p>
-
         <p>&nbsp;</p>
       </td>
     </tr>
@@ -128,7 +130,7 @@
       <td>
         <p>
           <label>
-            <input type="text" name="textfield5" id="textfield5" />
+            <input type="text" name="prioridad" id="prioridad" />
           </label>
         </p>
       </td>
@@ -138,7 +140,7 @@
       <td>
         <p>
           <label>
-            <textarea name="textarea" id="textarea" cols="40" rows="3"></textarea>
+            <textarea name="comentario" id="comentario" cols="40" rows="3"></textarea>
           </label>
         </p>
       </td>
@@ -148,7 +150,7 @@
       <td>
         <p>
           <label>
-            <input type="checkbox" name="checkbox1" id="checkbox1" />
+            <input type="checkbox" name="flag_comparte_tour" id="flag_comparte_tour" />
           </label>
         </p>
       </td>
@@ -161,7 +163,7 @@
           <td>
               <p>
               <label>
-                <input type="button" name="btnAceptar" id="btnAceptar" value="Aceptar" onclick="Aceptar()" class="BotonComando"/>
+                <input type="submit" value="enviar" name="boton" class="BotonComando"/>
               </label>
             </p>
           </td>
@@ -179,18 +181,12 @@
     </tr>
   </table>
   </form>
+  
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
 
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-</div>
-<div style="clear:both;">
-<iframe
-	name=I1 align=middle
- 	frameborder=0
-	width=600 height=350
-	src="listaTours1.html"></iframe>
-</div>
 </div>
 
 <div id="footer"> Derechos Reservados a Backlog6 UPC-DEW
