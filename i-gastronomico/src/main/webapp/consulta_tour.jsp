@@ -90,21 +90,21 @@
     </tr>
     <tr>
        <td colspan="6">
-           <table width="567" border="0">
-                <tr>
-        <td width="73" bgcolor="#FFA8A8">Codigo Tour</td>
-        <td width="79" bgcolor="#FFA8A8">Nombre Tour</td>
-        <td width="31" bgcolor="#FFA8A8">Local</td>
-        <td width="53" bgcolor="#FFA8A8">Prioridad</td>
-        <td width="70" bgcolor="#FFA8A8">Comentario</td>
-        <td width="134" bgcolor="#FFA8A8">Flag_Compartir</td>
+           <table>
+      <c:forEach var="tour" items="${lstaTab}">
+        <tr>
+          <td>${tour.cod_tour}</td>
+          <td>${tour.nombre_tour}</td>
+          <td>${tour.cod_usuario}</td>
         </tr>
-      
-        </table>
+      </c:forEach>
+    </table>
+
        </td>
     </tr>
   <tr>
-    <td colspan="6"><table width="567" border="0">
+    <td colspan="6">
+        <table width="567" border="0">
       <tr>
         <td width="73" bgcolor="#FFA8A8">Codigo Tour</td>
         <td width="79" bgcolor="#FFA8A8">Nombre Tour</td>
