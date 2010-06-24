@@ -31,7 +31,7 @@
 <li><a href="comentarios.html">Comentarios</a></li>
 <li><a href="registro.html">Registro</a></li>
 <li><a href="consultas.html">Consultas</a></li>
-<li><a href="tours.html">Tours</a></li>
+<li><a href="LocalAction.do?method=listarLocal">Tours</a></li>
 <li><a href="contactenos.html">Contáctenos</a></li>
 <li><a href="login.jsp">login</a></li>
 </ul>
