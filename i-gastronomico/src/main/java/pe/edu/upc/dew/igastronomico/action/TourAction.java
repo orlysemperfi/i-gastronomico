@@ -23,9 +23,9 @@ import pe.edu.upc.dew.igastronomico.bean.TourBean;
  * @author Junior
  */
 public class TourAction extends DispatchAction{
-
+TourService servicio=new TourService();
     public ActionForward registraTour (ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        TourService servicio=new TourService();
+        
 		TourBean Tbean=servicio.BuscaTour((TourForm)form);
         TourBean bean= new TourBean();
 
@@ -54,10 +54,11 @@ public class TourAction extends DispatchAction{
 
     public ActionForward listarTour(ActionMapping mapping,	ActionForm form,HttpServletRequest request,	HttpServletResponse response)throws Exception{
 
-		TourService servicio=new TourService();
+		//TourService servicio=new TourService();
 		//LocalBean bean=new LocalBean() ;
                 request.setAttribute("bTour",new TourBean());
                 request.setAttribute("lstaTab",servicio.getListaTours());
+                System.out.println("entrando lista tour");
                 return mapping.findForward("exito");
 
 
