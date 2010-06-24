@@ -41,4 +41,21 @@ public class TourService {
 	public List<TourBean> getListaTours() {
          return listTours;
 }
+
+         public TourBean BuscaTour(TourForm form) {
+              System.out.println(form.getCod_tour());
+                // System.out.println(form.getPassword());
+		TourBean t = null;
+		for(TourBean ts : listTours ){
+
+      if(ts.getCod_tour().equals(((TourForm)form).getCod_tour())){
+            //  .equals((LoginForm)form).getUsuario()){
+				t = ts;
+			}
+		}
+        return t;
+ }
+        public void registraTour(TourBean ts){
+          listTours.add(ts);
+     }
 }
