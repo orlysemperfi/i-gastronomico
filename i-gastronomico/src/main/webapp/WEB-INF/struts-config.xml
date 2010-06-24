@@ -8,6 +8,8 @@
 <struts-config>
     <form-beans>
     <form-bean name="LoginForm" type="pe.edu.upc.dew.igastronomico.actionform.LoginForm"></form-bean>
+    <form-bean name="TourForm" type="pe.edu.upc.dew.igastronomico.actionform.TourForm"></form-bean>
+    <form-bean name="LocalForm" type="pe.edu.upc.dew.igastronomico.actionform.LocalForm"></form-bean>
     </form-beans>
     
     <global-exceptions>
@@ -29,6 +31,39 @@
 			input="/error.jsp">
 	<forward name="exito" path="/index.jsp"></forward>
 	<forward name="falla" path="/error.jsp"></forward>
+	</action>
+
+        <action path="/tourRegistra"
+			type="pe.edu.upc.dew.igastronomico.action.TourAction"
+			name="TourForm"
+			scope="session"
+			parameter="method"
+			validate="false"
+			input="/errorR.jsp">
+	<forward name="exito" path="/CorrectorR.jsp"></forward>
+	<forward name="falla" path="/errorR.jsp"></forward>
+	</action>
+
+        <action path="/TourAction"
+			type="pe.edu.upc.dew.igastronomico.action.TourAction"
+			name="TourForm"
+			scope="session"
+			parameter="method"
+			validate="false"
+			input="/errorR.jsp">
+	<forward name="exito" path="/consulta_tour.jsp"></forward>
+	<forward name="falla" path="/errorR.jsp"></forward>
+	</action>
+
+        <action path="/LocalAction"
+			type="pe.edu.upc.dew.igastronomico.action.LocalAction"
+			name="LocalForm"
+			scope="session"
+			parameter="method"
+			validate="false"
+			input="/errorR.jsp">
+	<forward name="exito" path="/tours.jsp"></forward>
+	<forward name="falla" path="/errorR.jsp"></forward>
 	</action>
     </action-mappings>
     

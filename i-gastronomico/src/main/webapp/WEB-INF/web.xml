@@ -3,34 +3,21 @@
     <display-name>i-gastronomico</display-name>
 
      <!-- Struts Tag Library Descriptors -->
-<jsp-config>
-  
 
-  <taglib>
-    <taglib-uri>/tags/struts-html</taglib-uri>
-    <taglib-location>/WEB-INF/struts-html.tld</taglib-location>
-  </taglib>
 
-  <taglib>
-    <taglib-uri>/tags/struts-bean</taglib-uri>
-    <taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
-  </taglib>
+<filter>
+<filter-name>ResponseOverrideFilter</filter-name>
+<filter-class>org.displaytag.filter.ResponseOverrideFilter</filter-class>
+  </filter>
 
-  <taglib>
-    <taglib-uri>/tags/struts-logic</taglib-uri>
-    <taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
-  </taglib>
-
-  <taglib>
-    <taglib-uri>/tags/struts-nested</taglib-uri>
-    <taglib-location>/WEB-INF/struts-nested.tld</taglib-location>
-  </taglib>
-
-  <taglib>
-    <taglib-uri>/tags/struts-tiles</taglib-uri>
-    <taglib-location>/WEB-INF/struts-tiles.tld</taglib-location>
-  </taglib>
-</jsp-config>
+ <filter-mapping>
+ <filter-name>ResponseOverrideFilter</filter-name>
+ <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  <filter-name>ResponseOverrideFilter</filter-name>
+  <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
 
     <servlet>
         <servlet-name>action</servlet-name>
