@@ -8,7 +8,7 @@
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -90,22 +90,8 @@
     </tr>
     <tr>
        <td colspan="6">
-           <table>
-      <c:forEach var="tour" items="${lstaTab}">
-        <tr>
-          <td>${tour.cod_tour}</td>
-          <td>${tour.nombre_tour}</td>
-          <td>${tour.cod_usuario}</td>
-        </tr>
-      </c:forEach>
-    </table>
-
-       </td>
-    </tr>
-  <tr>
-    <td colspan="6">
-        <table width="567" border="0">
-      <tr>
+           <table width="567" border="0">
+               <tr>
         <td width="73" bgcolor="#FFA8A8">Codigo Tour</td>
         <td width="79" bgcolor="#FFA8A8">Nombre Tour</td>
         <td width="31" bgcolor="#FFA8A8">Local</td>
@@ -113,32 +99,22 @@
         <td width="70" bgcolor="#FFA8A8">Comentario</td>
         <td width="134" bgcolor="#FFA8A8">Flag_Compartir</td>
         </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+      <c:forEach var="tour" items="${lstaTab}">
+        <tr>
+          <td>${tour.cod_tour}</td>
+          <td>${tour.nombre_tour}</td>
+          <td>${tour.cod_usuario}</td>
+          <td>${tour.prioridad}</td>
+          <td>${tour.comentario}</td>
+          <td>${tour.flag_comparte_tour}</td>
+          
         </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        </tr>
-      </table></td>
-  </tr>
+      </c:forEach>
+    </table>
+
+       </td>
+    </tr>
+ 
 </table>
 
 </div>
