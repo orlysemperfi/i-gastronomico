@@ -30,10 +30,10 @@
 
 <div id="menu">
 <ul>
-<li><a href="index.html">Inicio</a></li>
+<li><a href="index.jsp">Inicio</a></li>
 <li><a href="comentarios.html">Comentarios</a></li>
 <li><a href="registro.html">Registro</a></li>
-<li><a href="consultas.html">Consultas</a></li>
+<li><a href="consultas.jsp">Consultas</a></li>
 <li><a href="tours.html">Tours</a></li>
 <li><a href="contactenos.html">Contáctenos</a></li>
 </ul>
