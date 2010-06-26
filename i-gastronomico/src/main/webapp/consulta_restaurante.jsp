@@ -31,7 +31,7 @@
 
 <div class="left">
 <h2><a href="consultas.jsp">Consultas</a> : Restaurantes</h2>
-<p><a href="consulta_restaurante.jsp"><img src="images/consulta_restaurant.jpg" alt="Consultar restaurantes" width="47" height="46" /></a><a href="consulta_tour.html"><img src="images/consulta_tours.jpg" alt="Consultar tours" width="49" height="46" /></a><br />
+<p><a href="consulta_restaurante.jsp"><img src="images/consulta_restaurant.jpg" alt="Consultar restaurantes" width="47" height="46" /></a><a href="LocalAction3.do?method=listarLocal"><img src="images/consulta_tours.jpg" alt="Consultar tours" width="49" height="46" /></a><br />
 </p>
 </div>
 <div style="clear:both;">
