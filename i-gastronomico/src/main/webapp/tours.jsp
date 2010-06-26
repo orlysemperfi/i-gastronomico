@@ -10,6 +10,8 @@
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:include page="cabecera.jsp" flush="true|false"/>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
@@ -51,22 +53,7 @@
 
 <div id="wrap">
 
-<div id="header">
-<h1><a href="#">i-Gastronómico</a></h1>
-<h2>Aventura Culinaria Virtual</h2>
-</div>
 
-<div id="menu">
-<ul>
-<li><a href="index.jsp">Inicio</a></li>
-<li><a href="comentarios.html">Comentarios</a></li>
-<li><a href="registro.html">Registro</a></li>
-<li><a href="consultas.html">Consultas</a></li>
-<li><a href="tours.jsp">Tours</a></li>
-<li><a href="contactenos.html">Contáctenos</a></li>
-<li><a href="login.jsp">login</a></li>
-</ul>
-</div>
 
 <div id="content">
 
@@ -105,7 +92,7 @@
       <td>
         <p>
           <label>
-            <input type="text" value="${usrLogin.cod_usuario}" name="cod_usuario" id="cod_usuario" disabled="disabled" />
+              <input type="text" value="${usrLogin.cod_usuario}" name="cod_usuario" id="cod_usuario" readonly />
           </label>
         </p>
       </td>
@@ -150,7 +137,7 @@
       <td>
         <p>
           <label>
-            <input type="checkbox" name="flag_comparte_tour" id="flag_comparte_tour" />
+            <input type="checkbox" name="flag_comparte_tour" id="flag_comparte_tour" value="S" />
           </label>
         </p>
       </td>
@@ -180,6 +167,35 @@
 
     </tr>
   </table>
+          <table width="567" border="0">
+               <tr>
+        <td width="73" bgcolor="#FFA8A8">Codigo Tour</td>
+        <td width="79" bgcolor="#FFA8A8">Nombre Tour</td>
+        <td width="79" bgcolor="#FFA8A8">uSARIO</td>
+        <td width="31" bgcolor="#FFA8A8">Local</td>
+        <td width="53" bgcolor="#FFA8A8">Prioridad</td>
+        <td width="70" bgcolor="#FFA8A8">Comentario</td>
+        <td width="134" bgcolor="#FFA8A8">Flag_Compartir</td>
+        <td width="134" bgcolor="#FFA8A8">Modificar</td>
+        <td width="134" bgcolor="#FFA8A8">Eliminar</td>
+        </tr>
+      <c:forEach var="tour" items="${lstaTab}">
+        <tr>
+          <td>${tour.cod_tour}</td>
+          <td>${tour.nombre_tour}</td>
+          <td>${tour.cod_usuario}</td>
+          <td>${tour.cod_local}</td>
+          <td>${tour.prioridad}</td>
+          <td>${tour.comentario}</td>
+          <td>${tour.flag_comparte_tour}</td>
+          <td><a href="Carga.do?method=cargaDatos&cod_tour=<c:out value="${tour.cod_tour}"/>">   <img alt="actualizar" src="images/act.jpg" width="18" height="18" border="0">
+</a></td>
+          <td><a href="elimina.do?method=eliminar&cod_tour=<c:out value="${tour.cod_tour}"/>">   <img alt="eliminar" src="images/eli.jpg" width="18" height="18" border="0">
+</a></td>
+
+        </tr>
+      </c:forEach>
+    </table>
   </form>
   
   <p>&nbsp;</p>
