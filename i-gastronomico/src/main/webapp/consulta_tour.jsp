@@ -9,6 +9,7 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:include page="cabecera.jsp" flush="true|false"/>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -24,46 +25,34 @@
 
 <div id="wrap">
 
-<div id="header">
-<h1><a href="#">i-Gastronómico</a></h1>
-<h2>aventura culinaria virtual</h2>
-</div>
 
-<div id="menu">
-<ul>
-<li><a href="index.html">Inicio</a></li>
-<li><a href="comentarios.html">Comentarios</a></li>
-<li><a href="registro.html">Registro</a></li>
-<li><a href="consultas.html">Consultas</a></li>
-<li><a href="tours.html">Tours</a></li>
-<li><a href="contactenos.html">Contáctenos</a></li>
-</ul>
-</div>
 
 <div id="content">
 
 <div class="left">
-<h2><a href="consultas.html">Consultas</a> : Tours Gastronómicos</h2>
-<p><a href="consulta_restaurante.html"><img src="images/consulta_restaurant.jpg" alt="Consultar restaurantes" width="47" height="46" /></a><a href="consulta_tour.html"><img src="images/consulta_tours.jpg" alt="Consultar tours" width="49" height="46" /></a><br />
+<h2><a href="consultas.jsp">Consultas</a> : Tours Gastronómicos</h2>
+<p><a href="consulta_restaurante.jsp"><img src="images/consulta_restaurant.jpg" alt="Consultar restaurantes" width="47" height="46" /></a><a href="consulta_tour.html"><img src="images/consulta_tours.jpg" alt="Consultar tours" width="49" height="46" /></a><br />
 </p>
 </div>
 <div style="clear:both;">
   <p>&nbsp;</p>
+  <form name="form1" method="post" action="consultaTour.do">
+            <input type="hidden" name="method" value="ConsultarTour"/>
   <table width="300" border="1">
   <tr>
     <td>Codigo</td>
     <td>
       <p>
-        <select name="liCodigosTours" id="liCodigosTours" class="combo" >
-          <option value="*">[ TODOS ]</option>
-        </select>
+        <label>
+          <input type="text" name="cod_tour" id="cod_tour" />
+        </label>
       </p>
     </td>
     <td>Nombre</td>
     <td>
       <p>
         <label>
-          <input type="text" name="textfield2" id="textfield2" />
+          <input type="text" name="nombre_tour" id="nombre_tour" />
         </label>
       </p>
     </td>
@@ -71,7 +60,9 @@
     <td>
       <p>
         <label>
-          <input type="text" name="textfield3" id="textfield3" />
+          <html:select property="cod_local" name="blocal" styleClass="combo">
+                                       <html:options collection="lstaCmbo" labelProperty="razon_social" property="cod_local"/>
+                               </html:select>
         </label>
       </p>
     </td>
@@ -83,7 +74,7 @@
     <td align="right">
       <p>
         <label>
-          <input type="submit" name="Consultar" id="Consultar" value="Consultar" class="BotonComando" />
+          <input type="submit" name="boton"  value="enviar" class="BotonComando" />
         </label>
       </p>
     </td>
@@ -94,6 +85,7 @@
                <tr>
         <td width="73" bgcolor="#FFA8A8">Codigo Tour</td>
         <td width="79" bgcolor="#FFA8A8">Nombre Tour</td>
+        <td width="79" bgcolor="#FFA8A8">USUARIO</td>
         <td width="31" bgcolor="#FFA8A8">Local</td>
         <td width="53" bgcolor="#FFA8A8">Prioridad</td>
         <td width="70" bgcolor="#FFA8A8">Comentario</td>
@@ -104,6 +96,7 @@
           <td>${tour.cod_tour}</td>
           <td>${tour.nombre_tour}</td>
           <td>${tour.cod_usuario}</td>
+          <td>${tour.cod_local}</td>
           <td>${tour.prioridad}</td>
           <td>${tour.comentario}</td>
           <td>${tour.flag_comparte_tour}</td>
@@ -111,12 +104,13 @@
         </tr>
       </c:forEach>
     </table>
+          
 
        </td>
     </tr>
  
 </table>
-
+ </form>
 </div>
 
 </div>
