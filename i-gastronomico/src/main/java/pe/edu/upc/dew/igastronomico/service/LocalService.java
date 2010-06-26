@@ -40,4 +40,22 @@ public class LocalService {
          return listLocal;
      }
 
+        public LocalBean BuscaRest(LocalForm form) {
+              System.out.println(form.getCod_local());
+                // System.out.println(form.getPassword());
+		LocalBean l = null;
+		for(LocalBean ls : listLocal ){
+
+      if(ls.getCod_local().equals(((LocalForm)form).getCod_local())){
+            //  .equals((LoginForm)form).getUsuario()){
+				l = ls;
+			}
+		}
+        return l;
+ }
+
+        public void registraRest(LocalBean ls){
+          listLocal.add(ls);
+     }
+
 }
