@@ -1,4 +1,4 @@
-#labels 2doPrototipo,2do,Prototipo
+#labels JSP,Struts,JSP-EL,frameworkStruts
 El segundo prototipo del proyecto considera lo sgte: 
 
 - Pase de los archivos html a jsp
