@@ -1,4 +1,4 @@
-#labels 1erPrototipo,1er,Prototipo
+#labels ER,Html,MVC,UserHistory
 El primer prototipo del proyecto consideró lo sgte:
 
 - Definición del modelo de ER para el proyecto
@@ -8,4 +8,3 @@ El primer prototipo del proyecto consideró lo sgte:
 - Generación de las user history para el proyecto
 - Definición de los responsables para cada user history
 - Definición del alcance de cada user history
-
