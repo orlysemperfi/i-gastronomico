@@ -10,6 +10,7 @@
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
+<jsp:include page="cabecera.jsp" flush="true|false"/>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -19,6 +20,19 @@
         <title>Login al sistema</title>
 </head>
 <body>
+
+<div id="wrap">
+
+
+
+<div id="content">
+
+<div class="left">
+<h2><a href="#">Login</a></h2>
+<p><br />
+</p>
+</div>
+<div style="clear:both;">
 <form name="form1" method="post" action="login.do">
 <input type="hidden" name="method" value="login"/>
   <p>Usuario:
@@ -30,6 +44,8 @@
 </form>
 
 <bean:write name="mensajeerror" ignore="true" scope="request"/>
+</div>
 
+</div>
 </body>
 </html>

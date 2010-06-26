@@ -15,6 +15,6 @@
     </head>
     <body>
        <h3>Registro Incorrecto</h3>
-        <h3><a href="tours.jsp">Volver al tour</a> </h3>
+        <h3><a href="LocalAction.do?method=listarLocal">Volver al tour</a> </h3>
     </body>
 </html>

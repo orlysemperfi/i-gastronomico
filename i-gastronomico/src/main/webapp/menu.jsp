@@ -21,7 +21,7 @@
         <div id="menu">
 <ul>
 <li><a href="index.jsp">Iniciooo</a></li>
-<li><a href="comentarios.html">Comentarios</a></li>
+<li><a href="comentarios.jsp">Comentarios</a></li>
   <c:if test="${usrLogin.tipo_usuario == 1}">
 <li><a href="registro.jsp">Registro</a></li>
   </c:if>
@@ -30,9 +30,15 @@
 <li><a href="LocalAction.do?method=listarLocal">Tours</a></li>
   </c:if>
 
-<li><a href="contactenos.html">Contáctenos</a></li>
+<li><a href="contactenos.jsp">Contáctenos</a></li>
+<c:if test="${usrLogin.cod_usuario == null}">
 <li><a href="login.jsp">login</a></li>
-<li><a href="newjsp.jsp">newjsp</a></li>
+  </c:if>
+
+<c:if test="${usrLogin.cod_usuario != null}">
+<li><a href="LocalAction.do?method=listarLocal">cerrar sesion</a></li>
+  </c:if>
+
 </ul>
 </div>
     </body>
