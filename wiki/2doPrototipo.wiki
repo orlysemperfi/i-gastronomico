@@ -6,3 +6,23 @@ El segundo prototipo del proyecto considera lo sgte:
 - Simulación del registro y consulta de la información seteando la lista por duro
 - Usar la tecnología de JSP-EL para mostrar los datos
 - Usar el framework Struts
+- Uso de:
+		- HttpServlet
+			doGet
+			doPost
+
+		- HttpServletRequest
+			getParameter
+			getRequestDispatcher
+			setAtribute
+
+		- HttpServletResponse
+			getWriter
+
+		- HttpSession
+			setAttribute 
+			getAttribute 
+			removeAttribute 
+			invalidate 
+
+		- Session Timeout
