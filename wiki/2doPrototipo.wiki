@@ -1,4 +1,4 @@
-#labels JSP,JSP-EL,Struts,servlet-api
+#labels JSP,JSP-EL,Struts,ServletApi
 El segundo prototipo del proyecto considera lo sgte: 
 
 - Pase de los archivos html a jsp
