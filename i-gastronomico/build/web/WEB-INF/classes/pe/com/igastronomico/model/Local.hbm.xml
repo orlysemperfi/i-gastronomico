@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 05/07/2010 12:21:34 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="igastronomico" lazy="false" name="pe.com.igastronomico.model.Local" table="local">
+    <id name="codLocal" type="java.lang.Integer">
+      <column name="cod_local"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="pe.com.igastronomico.model.CategoriaCosto" fetch="select" lazy="false" name="categoriaCosto">
+      <column name="idcategoria_costo" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="pe.com.igastronomico.model.CategoriaPlato" fetch="select" lazy="false" name="categoriaPlato">
+      <column name="idcategoria_plato" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="pe.com.igastronomico.model.Usuario" fetch="select" lazy="false" name="usuario">
+      <column name="cod_usuario" not-null="true"/>
+    </many-to-one>
+    <property name="razonSocial" type="string">
+      <column length="250" name="razon_social"/>
+    </property>
+    <property name="departamento" type="string">
+      <column length="250" name="departamento"/>
+    </property>
+    <property name="provincia" type="string">
+      <column length="250" name="provincia"/>
+    </property>
+    <property name="distrito" type="string">
+      <column length="250" name="distrito"/>
+    </property>
+    <property name="direccion" type="string">
+      <column length="250" name="direccion"/>
+    </property>
+    <property name="referencia" type="string">
+      <column length="250" name="referencia"/>
+    </property>
+    <property name="personaDeContacto" type="string">
+      <column length="250" name="persona_de_contacto"/>
+    </property>
+    <property name="telefonos" type="string">
+      <column length="50" name="telefonos"/>
+    </property>
+    <property name="correo" type="string">
+      <column length="100" name="correo"/>
+    </property>
+    <property name="web" type="string">
+      <column length="100" name="web"/>
+    </property>
+    <property name="fotoLocal" type="binary">
+      <column name="foto_local"/>
+    </property>
+    <property name="fotoUbicacion" type="binary">
+      <column name="foto_ubicacion"/>
+    </property>
+    <property name="flagPromocion" type="java.lang.Integer">
+      <column name="flag_promocion"/>
+    </property>
+    <property name="comentarioPerfil" type="string">
+      <column length="65535" name="comentario_perfil"/>
+    </property>
+    <property name="cartaActual" type="string">
+      <column length="250" name="carta_actual"/>
+    </property>
+    <property name="promocionActual" type="string">
+      <column length="250" name="promocion_actual"/>
+    </property>
+    <set inverse="true" lazy="false" name="comentarios" order-by="idcomentario">
+      <key>
+        <column name="cod_local" not-null="true"/>
+      </key>
+      <one-to-many class="pe.com.igastronomico.model.Comentario"/>
+    </set>
+    <set inverse="true" lazy="false" name="tours" table="tourlocal">
+      <key>
+        <column name="cod_local" not-null="true"/>
+      </key>
+      <many-to-many entity-name="pe.com.igastronomico.model.Tour">
+        <column name="idtour" not-null="true"/>
+      </many-to-many>
+    </set>
+  </class>
+</hibernate-mapping>

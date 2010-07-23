@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 05/07/2010 12:21:34 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="igastronomico" name="pe.com.igastronomico.model.Usuario" table="usuario">
+    <id name="codUsuario" type="java.lang.Integer">
+      <column name="cod_usuario"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="pe.com.igastronomico.model.TipoUsuario" fetch="select" lazy="false" name="tipoUsuario">
+      <column name="idtipo_usuario" not-null="true"/>
+    </many-to-one>
+    <property name="nombreUsuario" type="string">
+      <column length="250" name="nombre_usuario"/>
+    </property>
+    <property name="fechaRegistro" type="date">
+      <column length="10" name="fecha_registro"/>
+    </property>
+    <property name="loginUsuario" type="string">
+      <column length="50" name="login_usuario"/>
+    </property>
+    <property name="claveUsuario" type="string">
+      <column length="50" name="clave_usuario"/>
+    </property>
+    <property name="fotoUsuario" type="binary">
+      <column name="foto_usuario"/>
+    </property>
+    <set inverse="true" lazy="false" name="comentarios">
+      <key>
+        <column name="cod_usuario" not-null="true"/>
+      </key>
+      <one-to-many class="pe.com.igastronomico.model.Comentario"/>
+    </set>
+    <set inverse="true" lazy="false" name="locals">
+      <key>
+        <column name="cod_usuario" not-null="true"/>
+      </key>
+      <one-to-many class="pe.com.igastronomico.model.Local"/>
+    </set>
+    <set inverse="true" lazy="false" name="tours">
+      <key>
+        <column name="cod_usuario" not-null="true"/>
+      </key>
+      <one-to-many class="pe.com.igastronomico.model.Tour"/>
+    </set>
+  </class>
+</hibernate-mapping>

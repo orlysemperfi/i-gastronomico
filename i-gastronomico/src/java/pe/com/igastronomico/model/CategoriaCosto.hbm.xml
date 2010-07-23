@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 05/07/2010 12:21:34 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="igastronomico" name="pe.com.igastronomico.model.CategoriaCosto" table="categoria_costo">
+    <id name="idcategoriaCosto" type="java.lang.Integer">
+      <column name="idcategoria_costo"/>
+      <generator class="identity"/>
+    </id>
+    <property name="categoriaCosto" type="string">
+      <column length="50" name="categoria_costo"/>
+    </property>
+  </class>
+</hibernate-mapping>

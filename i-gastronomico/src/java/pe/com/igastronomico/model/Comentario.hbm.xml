@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 05/07/2010 12:21:34 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="igastronomico" lazy="false" name="pe.com.igastronomico.model.Comentario" table="comentario">
+    <id name="idcomentario" type="java.lang.Integer">
+      <column name="idcomentario"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="pe.com.igastronomico.model.Local" fetch="select" name="local">
+      <column name="cod_local" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="pe.com.igastronomico.model.Usuario" fetch="select" lazy="false" name="usuario">
+      <column name="cod_usuario" not-null="true"/>
+    </many-to-one>
+    <property name="comentario" type="string">
+      <column length="65535" name="comentario"/>
+    </property>
+    <property name="calificacion" type="java.lang.Integer">
+      <column name="calificacion"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    #############################################################################################################################
+
+        dispatcher-servlet.xml
+        ==========================
+
+        Contenido:      Configuracion del Front-end.
+        Comentarios:    Utilice este archivo para configurar todo lo concerniente a la capa web, esto incluye a las vistas,
+                        controladores, internacionalizacion, etc.
+
+    #############################################################################################################################
+-->
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+    <!--
+            Archivo de Mensajes:
+            Carga todos los archivos de mensajes que comiencen con messagesxxxx
+            se recomienda colocar este archivo en la ruta de conexto del aplicativo
+    -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"
+                    p:basename="pe.com.igastronomico.ui.messages" />
+
+    <!--
+        Escaneo automático de clases anotadas:
+        La siguiente declaración se encargará de levantar las clases que posean las
+        anotaciones (@Controller, @RequestMapping, @Repository, etc) en el paquete que
+        se le indique. Para el caso, se indica el paquete web.
+    -->
+    <context:component-scan base-package="pe.com.igastronomico"/>
+
+    <!-- Resolucion de Nombres lógicos de las vistas:
+         En la siguiente declaración configuramos el prefijo y el
+         sufijo del archivo .jsp (en este caso).
+    -->
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<property name="maxUploadSize" value="5000000" />
+	<property name="maxInMemorySize" value="5000000" />
+    </bean>
+    
+</beans>
