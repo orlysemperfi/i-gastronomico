@@ -18,7 +18,9 @@ public class TourController extends IgastronomicoController{
 
     @RequestMapping("/listartour.htm")
     public void doListarTours(Model model){
+
         model.addAttribute(this.igastronomicoService.listaTour());
+
     }
     
 }

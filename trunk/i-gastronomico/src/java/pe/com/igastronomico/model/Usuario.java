@@ -1,7 +1,6 @@
 package pe.com.igastronomico.model;
 // Generated 05/07/2010 12:21:34 PM by Hibernate Tools 3.2.1.GA
 
-
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -27,7 +26,6 @@ public class Usuario  implements java.io.Serializable {
         this.fechaRegistro = new Date();
     }
 
-	
     public Usuario(TipoUsuario tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }
@@ -92,34 +90,42 @@ public class Usuario  implements java.io.Serializable {
     public Set getTours() {
         return this.tours;
     }
+
     
     public void setTours(Set tours) {
         this.tours = tours;
     }
 
+
     public String getClaveUsuario() {
         return claveUsuario;
     }
+
 
     public void setClaveUsuario(String claveUsuario) {
         this.claveUsuario = claveUsuario;
     }
 
+
     public String getLoginUsuario() {
         return loginUsuario;
     }
+
 
     public void setLoginUsuario(String loginUsuario) {
         this.loginUsuario = loginUsuario;
     }
 
+
     public byte[] getFotoUsuario() {
         return fotoUsuario;
     }
 
+
     public void setFotoUsuario(byte[] fotoUsuario) {
         this.fotoUsuario = fotoUsuario;
     }
+
 
     public boolean isNew() {
 	return (this.codUsuario == null);
