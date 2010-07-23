@@ -9,7 +9,6 @@ import java.util.Set;
  */
 public class Tour  implements java.io.Serializable {
 
-
      private Integer idtour;
      private Usuario usuario;
      private String codTour;
@@ -20,10 +19,10 @@ public class Tour  implements java.io.Serializable {
     public Tour() {
     }
 
-
     public Tour(Usuario usuario) {
         this.usuario = usuario;
     }
+
     public Tour(Usuario usuario, String codTour, String comentario, Integer flagComparteTour, Set locals) {
        this.usuario = usuario;
        this.codTour = codTour;
@@ -74,9 +73,6 @@ public class Tour  implements java.io.Serializable {
     public void setLocals(Set locals) {
         this.locals = locals;
     }
-
-
-
 
 }
 

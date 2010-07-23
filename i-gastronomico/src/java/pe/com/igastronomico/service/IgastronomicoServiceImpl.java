@@ -110,12 +110,16 @@ public class IgastronomicoServiceImpl implements IgastronomicoService {
     //    Tour
     @Override
     public Tour getTour(int id){
+
         return igastronomicoDao.getTour(id);
+        
     }
 
     @Override
     public List<Tour> listaTour(){
+
         return igastronomicoDao.listaTour();
+
     }
 
     @Override
