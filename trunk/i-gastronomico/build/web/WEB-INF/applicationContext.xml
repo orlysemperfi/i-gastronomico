@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    #############################################################################################################################
+
+        applicationContext.xml
+        ==========================
+
+        Contenido:      Configuracion de la capa de .
+        Comentarios:    Utilice este archivo para configurar todo lo concerniente a la regla de negocios
+                        No incluya en este archivo la declaracion de Daos y Services.
+
+    #############################################################################################################################
+-->
+
+
+ <beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:jaxws="http://cxf.apache.org/jaxws"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+        http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd" default-autowire="byName">
+
+<!-- ################################## -->
+<!-- #           RECURSOS             # -->
+<!-- ################################## -->
+
+    <!--  Carga el archivo de configuración para el acceso a la base de datos  -->
+    <context:property-placeholder location="/WEB-INF/jdbc.properties"/>
+
+
+<!-- ################################## -->
+<!-- #        PERSISTENCIA            # -->
+<!-- ################################## -->
+
+    <!-- [iBATIS] -->
+<!--    <bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+        <property name="configLocation" value="WEB-INF/config/application-SqlMapConfig.xml"></property>
+        <property name="dataSource"><ref bean="dataSource"/></property>
+    </bean>
+-->
+
+    <!-- [HIBERNATE] -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean"
+                    p:dataSource-ref="dataSource" >
+            <property name="hibernateProperties">
+                    <props>
+                            <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                            <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+                    </props>
+            </property>
+            <property name="mappingDirectoryLocations">
+                    <list>
+                            <value>classpath:/pe/com/igastronomico/model</value>
+                    </list>
+            </property>
+    </bean>
+
+
+
+<!-- ################################## -->
+<!-- #        TRANSACCIONES           # -->
+<!-- ################################## -->
+    <!-- Administrador de transacciones usando JDBC datasource,
+         para configurar las transacciones mediante AOP, describa aqui los Point-Cut's
+        -->
+     <bean id="transactionManager"
+             class="org.springframework.orm.hibernate3.HibernateTransactionManager" >
+         <property name="sessionFactory" ref="sessionFactory" />
+     </bean>
+
+    <!-- [ Transacciones por anotaciones ]
+         Al activar esta linea, indicas al spring que configure la administraciones de transacciones
+         segun las anotaciones @Transactional en las clases o en los métodos
+    -->
+    <tx:annotation-driven/>
+
+    <!-- Activación del uso de anotaciones como @Required y @Autowired -->
+    <!-- Esta linea es necesario para la autoinyeccion de dependencias -->
+    <context:annotation-config />
+
+    <bean id="usuario" class="pe.com.igastronomico.model.Usuario" scope="session" />
+
+ </beans>

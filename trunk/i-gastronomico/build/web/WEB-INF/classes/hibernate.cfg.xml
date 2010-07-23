@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/igastronomico</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">aa</property>
+    <mapping resource="pe/com/igastronomico/CategoriaPlatos.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/Locales.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/CategoriaCostos.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/TipoUsuario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/Usuario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/Tours.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/Comentarios.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model/Locales.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model/CategoriaPlatos.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model/Tours.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model/CategoriaCostos.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model/TipoUsuario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model/Usuario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model/Comentarios.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model/TipoUsuario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model/Usuario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/CategoriaCosto.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/Comentario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/Tour.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/TipoUsuario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/CategoriaPlato.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/Usuario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/Local.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model/CategoriaPlato.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model/Comentario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model/Local.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model/Tour.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model/TipoUsuario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model/Usuario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model/CategoriaCosto.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model2/TipoUsuario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model2/CategoriaCosto.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model2/Tour.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model2/CategoriaPlato.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model2/Usuario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/model2/Comentario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/ui/model2/Usuario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/ui/model2/Comentario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/ui/model2/Tour.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/ui/model2/Local.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/ui/model2/CategoriaCosto.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/ui/model2/TipoUsuario.hbm.xml"/>
+    <mapping resource="pe/com/igastronomico/ui/model2/CategoriaPlato.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

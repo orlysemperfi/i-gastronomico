@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13/07/2010 02:22:03 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="igastronomico" lazy="false" name="pe.com.igastronomico.model.Tour" table="tour">
+    <id name="idtour" type="java.lang.Integer">
+      <column name="idtour"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="pe.com.igastronomico.model.Usuario" fetch="select" name="usuario">
+      <column name="cod_usuario" not-null="true"/>
+    </many-to-one>
+    <property name="codTour" type="string">
+      <column length="150" name="cod_tour"/>
+    </property>
+    <property name="comentario" type="string">
+      <column length="65535" name="comentario"/>
+    </property>
+    <property name="flagComparteTour" type="java.lang.Integer">
+      <column name="flag_comparte_tour"/>
+    </property>
+    <set inverse="false" lazy="false" name="locals" table="tourlocal">
+      <key>
+        <column name="idtour" not-null="true"/>
+      </key>
+      <many-to-many entity-name="pe.com.igastronomico.model.Local">
+        <column name="cod_local" not-null="true"/>
+      </many-to-many>
+    </set>
+  </class>
+</hibernate-mapping>
