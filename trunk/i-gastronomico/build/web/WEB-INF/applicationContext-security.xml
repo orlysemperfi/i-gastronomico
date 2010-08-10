@@ -23,7 +23,7 @@
         <intercept-url pattern="/*.htm" access="" />
         <intercept-url pattern="/registrolocal.htm" access="ROLE_ADMIN" />
         <intercept-url pattern="/registrotour.htm" method="POST" access="ROLE_CLIEN" />
-        <intercept-url pattern="/formusuario.htm" access="ROLE_ADMIN" />
+        <intercept-url pattern="/formusuario.htm" access="" />
         <logout />
     </http>
     <global-method-security secured-annotations="enabled" />
