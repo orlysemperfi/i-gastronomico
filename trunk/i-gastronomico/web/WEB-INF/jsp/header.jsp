@@ -32,8 +32,10 @@
                     <a href="<c:url value="/listarlocales.htm"/>" >Mis Locales</a>
                 </div>
             </div>
-            <div id="mainmenu">
-                <%@include file="/WEB-INF/jsp/menu.jsp" %>
-            </div>
+                <a href="javascript:window.external.addFavorite(location.href, document.title);">
+                    <div id="mainmenu">
+                        <%@include file="/WEB-INF/jsp/menu.jsp" %>
+                    </div>
+                </a>
             <div id="maincen">
                 
