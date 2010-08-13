@@ -1,0 +1,4 @@
+Hibernate nos sirve para mapear tablas de una base de datos relacional a objetos java,
+puesto que una de las técnicas más utilizadas hoy en día es el llamado mapeo OR (mapeo Objetos a  tablas  de un modelo de bases de datos relacional). Ademas las características que ofrecen estas estrategias para resolver problemas como el mapeo de relaciones  entre objetos: herencia, asociaciones, cache de objetos persistentes, sincronización automática con la base de datos, etc.
+
+Hibernate es uno de estos frameworks ampliamente utilizados  en el desarrollo de aplicaciones Java  y aplicaciones empresariales que da solución a todos estos requerimientos  típicos de una estrategia OR.
