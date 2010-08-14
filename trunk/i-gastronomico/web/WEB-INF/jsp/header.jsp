@@ -29,7 +29,7 @@
             </div>
             <div id="mainsubsup">
                 <div class="enlaceSimple" style="float: right; width: 80px; margin: 42px 25px 0px 10px">
-                    <a href="<c:url value="/listarlocales.htm?all=true"/>" >Mis Locales</a>
+                    <a href="<c:url value="/listarlocales.htm"/>" >Mis Locales</a>
                 </div>
             </div>
                 <a href="javascript:window.external.addFavorite(location.href, document.title);">
