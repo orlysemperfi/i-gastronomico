@@ -1,0 +1,5 @@
+Existen dos Tipos de Usuario:
+
+1. Dueño: Puede crear restaurantes, pero nó crear Tours Gastronómicos.
+
+2. Cliente: No puede crear restaurantes, pero sí crear Tours Gastronómicos.
