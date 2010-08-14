@@ -1,5 +1,3 @@
-Existen dos Tipos de Usuario:
+Los niveles de acceso se explican a continuación en el siguiente link:
 
-1. Dueño: Puede crear restaurantes, pero nó crear Tours Gastronómicos.
-
-2. Cliente: No puede crear restaurantes, pero sí crear Tours Gastronómicos.
+https://spreadsheets.google.com/pub?key=0AtatSSqABue9dHZYYThYWWdUNGJXTVhhaUVHS1RobHc&hl=en&single=true&gid=0&output=html
