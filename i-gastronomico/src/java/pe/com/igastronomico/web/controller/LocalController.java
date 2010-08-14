@@ -26,9 +26,21 @@ public class LocalController extends IgastronomicoController{
 
     @RequestMapping("/listarlocales.htm")
     public void doListLocales(@RequestParam(value="all", required=false) String all, Model model, HttpServletRequest request){
+
+        String UsuarioActivo;
+
         Usuario usuario = this.igastronomicoService.getUsuario(this.getCurrentUser(request));
+
+        UsuarioActivo = usuario.getLoginUsuario();
+
         if(all==null){
-            model.addAttribute(usuario.getLocals());
+            if (!UsuarioActivo.equals("guest")){
+                model.addAttribute(usuario.getLocals());
+            }
+            else
+            {
+                model.addAttribute(this.igastronomicoService.listaLocales());
+            }
         }
         else
         {            
