@@ -1,0 +1,1 @@
+Se usará el software de subversion TortoiseSVN para hacer Checkout y Commit al proyecto, ya que se ha temido problema con esas funcionalidades en el mismo IDE de Netbeans.
